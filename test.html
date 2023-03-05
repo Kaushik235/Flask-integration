@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML Deployment using Heroku</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="prediction">
+        <h1>Churn Prediction</h1>
+    <form action="{{ url_for('predict')}}"method="POST">
+        
+        
+        
+		<label for="Credit Score">CreditScore</label>
+		<input type="text" id="Credit Score" name="age" required="required">
+        <br>
+        
+        <label for="Age">Age</label>
+		<input type="text" id="Age" name="Age" required="required">
+        <br>
+        <label for="Tenure">Tenure</label>
+		<input type="text" id="Tenure" name="Tenure" required="required">
+        <br>
+        <label for="Balance">Balance</label>
+		<input type="text" id="Balance" name="Balance" required="required">
+        <br>
+        <label for="Number Of Products">Number of Products</label>
+		<input type="text" id="Number of Products" name="Number of Products" required="required">
+        <br>
+        <label for="Has Credit Card">Has Credit Card</label>
+		<input type="text" id="Has Credit Card" name="Has Credit Card" required="required">
+        <br>
+        <label for="Is Active Member">Active Member</label>
+		<input type="text" id="Active Member" name="Active member" required="required">
+        <br>
+        
+        <label for="EstimatedSalary	">EstimatedSalary	</label>
+		<input type="text" id="EstimatedSalary	" name="EstimatedSalary	" required="required">
+        <br type="line">
+        <label for="Geography_Germany">Geography_Germany</label>
+		<input type="text" id="Geography_Germany" name="Geography_Germany" required="required">
+        <br type="line">
+        <label for="Geography_Spain">Geography_Spain</label>
+		<input type="text" id="Geography_Spain" name="Geography_Spain" required="required">
+        <br type="line">
+        <label for="Gender_Male">Gender_Male</label>
+		<input type="text" id="Gender_Male" name="Gender_Male" required="required">
+        <br type="line">
+        
+		
+        
+         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+     </form>
+
+     <br>
+     <b>{{ prediction_text }}</b>
+    </div>
+</body>
+</html>
